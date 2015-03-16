@@ -7,4 +7,5 @@ public interface TTT {
     String currentBoard();
     boolean play(int row, int column, int player);
     int checkWinner();
+    String last3Plays();
 }

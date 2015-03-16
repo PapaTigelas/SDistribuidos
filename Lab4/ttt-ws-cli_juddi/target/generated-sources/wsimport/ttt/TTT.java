@@ -26,18 +26,6 @@ public interface TTT {
 
     /**
      * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "currentBoard", targetNamespace = "http://ttt/", className = "ttt.CurrentBoard")
-    @ResponseWrapper(localName = "currentBoardResponse", targetNamespace = "http://ttt/", className = "ttt.CurrentBoardResponse")
-    @Action(input = "http://ttt/TTT/currentBoardRequest", output = "http://ttt/TTT/currentBoardResponse")
-    public String currentBoard();
-
-    /**
-     * 
      * @param arg2
      * @param arg1
      * @param arg0
@@ -60,6 +48,18 @@ public interface TTT {
     /**
      * 
      * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "last3Plays", targetNamespace = "http://ttt/", className = "ttt.Last3Plays")
+    @ResponseWrapper(localName = "last3PlaysResponse", targetNamespace = "http://ttt/", className = "ttt.Last3PlaysResponse")
+    @Action(input = "http://ttt/TTT/last3PlaysRequest", output = "http://ttt/TTT/last3PlaysResponse")
+    public String last3Plays();
+
+    /**
+     * 
+     * @return
      *     returns int
      */
     @WebMethod
@@ -68,5 +68,17 @@ public interface TTT {
     @ResponseWrapper(localName = "checkWinnerResponse", targetNamespace = "http://ttt/", className = "ttt.CheckWinnerResponse")
     @Action(input = "http://ttt/TTT/checkWinnerRequest", output = "http://ttt/TTT/checkWinnerResponse")
     public int checkWinner();
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "currentBoard", targetNamespace = "http://ttt/", className = "ttt.CurrentBoard")
+    @ResponseWrapper(localName = "currentBoardResponse", targetNamespace = "http://ttt/", className = "ttt.CurrentBoardResponse")
+    @Action(input = "http://ttt/TTT/currentBoardRequest", output = "http://ttt/TTT/currentBoardResponse")
+    public String currentBoard();
 
 }
